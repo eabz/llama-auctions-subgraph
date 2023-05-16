@@ -1,0 +1,18 @@
+{
+  "name": "@llama/subgraph",
+  "license": "MIT",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "auctions:codegen": "yarn workspace @@llama/auctions-subgraph codegen",
+    "auctions:build": "yarn workspace @llama/auctions-subgraph build",
+    "lint": "yarn rome check */** --apply",
+    "format": "yarn rome format */** --write"
+  },
+  "workspaces": [
+    "subgraphs/*"
+  ],
+  "devDependencies": {
+    "rome": "^12.1.0"
+  }
+}
