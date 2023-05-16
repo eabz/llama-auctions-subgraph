@@ -9,17 +9,11 @@
 		"indentStyle": "tab",
 		"indentSize": 2,
 		"lineWidth": 80,
-		"ignore": []
-	},
-	"javascript": {
-		"formatter": {
-			"quoteStyle": "single",
-			"semicolons": "asNeeded",
-			"trailingComma": "none"
-		}
+		"ignore": ["node_modules"]
 	},
 	"linter": {
 		"enabled": true,
+		"ignore": ["node_modules"],
 		"rules": {
 			"recommended": true,
 			"suspicious": {

@@ -4,7 +4,9 @@
 	"scripts": {
 		"codegen": "graph codegen",
 		"build": "graph build",
-		"deploy": "graph deploy --node https://api.thegraph.com/deploy/ @llama/auctions-subgraph"
+		"deploy": "graph deploy --node https://api.thegraph.com/deploy/ @llama/auctions-subgraph",
+		"format": "pnpm rome format **/* --write",
+		"lint": "pnpm rome check **/* --apply-unsafe"
 	},
 	"dependencies": {
 		"@graphprotocol/graph-cli": "0.49.0",
