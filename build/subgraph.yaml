@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: LlamaAuctionHouse
@@ -25,7 +25,7 @@ dataSources:
         - Withdraw
       abis:
         - name: LlamaAuctionHouse
-          file: ./abis/LlamaAuctionHouse.json
+          file: LlamaAuctionHouse/abis/LlamaAuctionHouse.json
       eventHandlers:
         - event: AuctionBid(indexed uint256,address,uint256,bool)
           handler: handleAuctionBid
@@ -43,4 +43,4 @@ dataSources:
           handler: handleAuctionCreated
         - event: AuctionSettled(indexed uint256,address,uint256)
           handler: handleAuctionSettled
-      file: ./src/llama-auction-house.ts
+      file: LlamaAuctionHouse/LlamaAuctionHouse.wasm
