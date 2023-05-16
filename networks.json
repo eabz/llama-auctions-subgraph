@@ -1,0 +1,8 @@
+{
+	"mainnet": {
+		"LlamaAuctions": {
+			"address": "0x47a37ea6b691eb76aaf771d5bdbba2ca68add173",
+			"startBlock": 17145207
+		}
+	}
+}

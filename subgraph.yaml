@@ -1,0 +1,48 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: LlamaAuctions
+    network: mainnet
+    source:
+      address: "0x47a37ea6b691eb76aaf771d5bdbba2ca68add173"
+      abi: LlamaAuctions
+      startBlock: 17145207
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - AuctionBid
+        - AuctionExtended
+        - AuctionTimeBufferUpdated
+        - AuctionReservePriceUpdated
+        - AuctionMinBidIncrementPercentageUpdated
+        - AuctionDurationUpdated
+        - AuctionCreated
+        - AuctionSettled
+        - Withdraw
+      abis:
+        - name: LlamaAuctions
+          file: ./abis/LlamaAuctions.json
+      eventHandlers:
+        - event: AuctionBid(indexed uint256,address,uint256,bool)
+          handler: handleAuctionBid
+        - event: AuctionExtended(indexed uint256,uint256)
+          handler: handleAuctionExtended
+        - event: AuctionTimeBufferUpdated(uint256)
+          handler: handleAuctionTimeBufferUpdated
+        - event: AuctionReservePriceUpdated(uint256)
+          handler: handleAuctionReservePriceUpdated
+        - event: AuctionMinBidIncrementPercentageUpdated(uint256)
+          handler: handleAuctionMinBidIncrementPercentageUpdated
+        - event: AuctionDurationUpdated(uint256)
+          handler: handleAuctionDurationUpdated
+        - event: AuctionCreated(indexed uint256,uint256,uint256)
+          handler: handleAuctionCreated
+        - event: AuctionSettled(indexed uint256,address,uint256)
+          handler: handleAuctionSettled
+        - event: Withdraw(indexed address,uint256)
+          handler: handleWithdraw
+      file: ./src/llama-auctions.ts

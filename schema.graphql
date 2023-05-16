@@ -1,0 +1,80 @@
+type AuctionBid @entity(immutable: true) {
+  id: Bytes!
+  _llama_id: BigInt! # uint256
+  _sender: Bytes! # address
+  _value: BigInt! # uint256
+  _extended: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AuctionExtended @entity(immutable: true) {
+  id: Bytes!
+  _llama_id: BigInt! # uint256
+  _end_time: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AuctionTimeBufferUpdated @entity(immutable: true) {
+  id: Bytes!
+  _time_buffer: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AuctionReservePriceUpdated @entity(immutable: true) {
+  id: Bytes!
+  _reserve_price: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AuctionMinBidIncrementPercentageUpdated @entity(immutable: true) {
+  id: Bytes!
+  _min_bid_increment_percentage: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AuctionDurationUpdated @entity(immutable: true) {
+  id: Bytes!
+  _duration: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AuctionCreated @entity(immutable: true) {
+  id: Bytes!
+  _llama_id: BigInt! # uint256
+  _start_time: BigInt! # uint256
+  _end_time: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AuctionSettled @entity(immutable: true) {
+  id: Bytes!
+  _llama_id: BigInt! # uint256
+  _winner: Bytes! # address
+  _amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Withdraw @entity(immutable: true) {
+  id: Bytes!
+  _withdrawer: Bytes! # address
+  _amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
