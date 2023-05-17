@@ -2,9 +2,9 @@
 
 Subgraph to track Llamas Auctions House https://thellamas.io
 
-To use the graph, you can go to the publick Graph API:
+To use the graph, you can go to the public Graph API:
 
-https://api.thegraph.com/subgraphs/name/eabz/the-llamas-auctions
+https://thegraph.com/hosted-service/subgraph/eabz/the-llamas-auctions
 
 ## Getting Started
 
