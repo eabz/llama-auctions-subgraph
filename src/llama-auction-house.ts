@@ -8,6 +8,7 @@ import {
 	AuctionSettled as AuctionSettledEvent,
 	AuctionTimeBufferUpdated as AuctionTimeBufferUpdatedEvent,
 	PauseCall,
+	UnpauseCall,
 	Withdraw as WithdrawEvent,
 } from "../generated/LlamaAuctionHouse/LlamaAuctionHouse";
 import {
@@ -147,7 +148,7 @@ export function handleAuctionDurationUpdated(
 	entity.save();
 }
 
-export function handlePause(): void {
+export function handlePause(call: PauseCall): void {
 	const id = Bytes.fromUTF8(mainConfigId);
 
 	let entity = AuctionGlobalConfiguration.load(id);
@@ -160,7 +161,7 @@ export function handlePause(): void {
 	entity.save();
 }
 
-export function handleUnpause(): void {
+export function handleUnpause(call: UnpauseCall): void {
 	const id = Bytes.fromUTF8(mainConfigId);
 
 	let entity = AuctionGlobalConfiguration.load(id);
