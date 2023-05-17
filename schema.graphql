@@ -4,8 +4,8 @@ type Auction @entity(immutable: false) {
   start_time: BigInt!
   end_time: BigInt!
   total_bids: BigInt!
-  latest_bid_amount: BigInt!
-  latest_bidder: Bytes!
+  amount: BigInt!
+  winner: Bytes!
 }
 
 type CurrentAuction @entity(immutable: false) {
@@ -14,8 +14,8 @@ type CurrentAuction @entity(immutable: false) {
   start_time: BigInt!
   end_time: BigInt!
   total_bids: BigInt!
-  latest_bid_amount: BigInt!
-  latest_bidder: Bytes!
+  winning_bid: BigInt!
+  winner: Bytes!
 }
 
 type AuctionGlobalConfiguration @entity(immutable: false) {
