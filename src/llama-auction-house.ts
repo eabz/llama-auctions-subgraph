@@ -7,6 +7,7 @@ import {
 	AuctionReservePriceUpdated as AuctionReservePriceUpdatedEvent,
 	AuctionSettled as AuctionSettledEvent,
 	AuctionTimeBufferUpdated as AuctionTimeBufferUpdatedEvent,
+	PauseCall,
 	Withdraw as WithdrawEvent,
 } from "../generated/LlamaAuctionHouse/LlamaAuctionHouse";
 import {
@@ -146,9 +147,36 @@ export function handleAuctionDurationUpdated(
 	entity.save();
 }
 
+export function handlePause(): void {
+	const id = Bytes.fromUTF8(mainConfigId);
+
+	let entity = AuctionGlobalConfiguration.load(id);
+	if (!entity) {
+		entity = new AuctionGlobalConfiguration(id);
+		setDefaultGlobalConfig(entity);
+	}
+
+	entity.paused = true;
+	entity.save();
+}
+
+export function handleUnpause(): void {
+	const id = Bytes.fromUTF8(mainConfigId);
+
+	let entity = AuctionGlobalConfiguration.load(id);
+	if (!entity) {
+		entity = new AuctionGlobalConfiguration(id);
+		setDefaultGlobalConfig(entity);
+	}
+
+	entity.paused = false;
+	entity.save();
+}
+
 function setDefaultGlobalConfig(entity: AuctionGlobalConfiguration): void {
 	entity.time_buffer = BigInt.fromI64(300);
 	entity.reserve_price = BigInt.fromString("200000000000000000");
 	entity.min_bid_increment_percentage = BigInt.fromI64(2);
 	entity.duration = BigInt.fromI64(5400);
+	entity.paused = true;
 }

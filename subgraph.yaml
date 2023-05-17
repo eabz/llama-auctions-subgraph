@@ -26,6 +26,11 @@ dataSources:
       abis:
         - name: LlamaAuctionHouse
           file: ./abis/LlamaAuctionHouse.json
+      callHandlers:
+        - function: pause()
+          handler: handlePause    
+        - function: unpause()
+          handler: handleUnpause        
       eventHandlers:
         - event: AuctionBid(indexed uint256,address,uint256,bool)
           handler: handleAuctionBid

@@ -24,4 +24,5 @@ type AuctionGlobalConfiguration @entity(immutable: false) {
   reserve_price: BigInt!
   time_buffer: BigInt!
   duration: BigInt!
+  paused: Boolean!
 }
