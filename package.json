@@ -5,6 +5,7 @@
 		"codegen": "graph codegen",
 		"build": "graph build",
 		"deploy": "graph deploy --product hosted-service eabz/the-llamas-auctions",
+		"deploy:local": "graph create --node https://graph.kindynos.mx/deploy llamas/auction-house && graph deploy llamas/auction-house --ipfs https://ipfs.kindynos.mx --node https://graph.kindynos.mx/deploy",
 		"lint": "pnpm rome check **/* --apply-unsafe"
 	},
 	"dependencies": {
