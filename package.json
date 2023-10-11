@@ -6,8 +6,7 @@
     "codegen": "graph codegen",
     "deploy": "graph deploy --product hosted-service eabz/the-llamas-auctions",
     "deploy:local": "graph create --node https://graph.kindynos.mx/deploy llamas/auction-house && graph deploy llamas/auction-house --ipfs https://ipfs.kindynos.mx --node https://graph.kindynos.mx/deploy",
-    "format": "prettier --ignore-path .gitignore --ignore-path .prettierignore '**/*.{md,json,js,jsx,ts,tsx}' --write",
-    "lint": "pnpm rome check **/* --apply-unsafe"
+    "format": "prettier --ignore-path .gitignore --ignore-path .prettierignore '**/*.{md,json,js,jsx,ts,tsx}' --write"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "^0.49.0",

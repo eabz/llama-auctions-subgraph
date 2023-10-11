@@ -28,9 +28,6 @@ $ pnpm codegen
 
 # Build the graph to upload
 $ pnpm build
-
-# Lints and fixes files
-$ pnpm lint
 ```
 
 ## Commands
@@ -38,7 +35,6 @@ $ pnpm lint
 - `codegen`: generates the graph specific structures from the abi.
 - `build`: compile the subpgrah code.
 - `deploy`: deploy the subgraph to the hosted service.
-- `lint`: runs the linter in all the files.
 
 Check [package.json](./package.json) for other useful scripts.
 
