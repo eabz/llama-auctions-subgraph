@@ -1,19 +1,21 @@
 {
-	"name": "auctions-subgraph",
-	"license": "UNLICENSED",
-	"scripts": {
-		"codegen": "graph codegen",
-		"build": "graph build",
-		"deploy": "graph deploy --product hosted-service eabz/the-llamas-auctions",
-		"deploy:local": "graph create --node https://graph.kindynos.mx/deploy llamas/auction-house && graph deploy llamas/auction-house --ipfs https://ipfs.kindynos.mx --node https://graph.kindynos.mx/deploy",
-		"lint": "pnpm rome check **/* --apply-unsafe"
-	},
-	"dependencies": {
-		"@graphprotocol/graph-cli": "^0.49.0",
-		"@graphprotocol/graph-ts": "^0.30.0"
-	},
-	"devDependencies": {
-		"matchstick-as": "^0.5.2",
-		"rome": "^12.1.0"
-	}
+  "name": "auctions-subgraph",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "graph build",
+    "codegen": "graph codegen",
+    "deploy": "graph deploy --product hosted-service eabz/the-llamas-auctions",
+    "deploy:local": "graph create --node https://graph.kindynos.mx/deploy llamas/auction-house && graph deploy llamas/auction-house --ipfs https://ipfs.kindynos.mx --node https://graph.kindynos.mx/deploy",
+    "format": "prettier --ignore-path .gitignore --ignore-path .prettierignore '**/*.{md,json,js,jsx,ts,tsx}' --write",
+    "lint": "pnpm rome check **/* --apply-unsafe"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.49.0",
+    "@graphprotocol/graph-ts": "^0.30.0"
+  },
+  "devDependencies": {
+    "@graphql-eslint/eslint-plugin": "^3.20.1",
+    "matchstick-as": "^0.5.2",
+    "prettier": "^3.0.3"
+  }
 }

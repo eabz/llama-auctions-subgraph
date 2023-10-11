@@ -44,4 +44,4 @@ Check [package.json](./package.json) for other useful scripts.
 
 ## Contribution Guidelines
 
-Developers are expected to follow contribution guidelines to keep the codebase efficient, readable, and standardized. Contribution guidelines are clearly laid out so developers and contributors can submit their work without much revision, resulting in faster development and more useful contributions. These guideliness are specified through the `rome` configuration.
+Developers are expected to follow contribution guidelines to keep the codebase efficient, readable, and standardized. Contribution guidelines are laid out so developers and contributors can submit their work without much revision, resulting in faster development and more useful contributions. These guidelines are specified through eslint modules.
